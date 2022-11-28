@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ex02</title>
+</head>
+<body>
+	<form id="form">
+		<input type="text" id="value1">
+		<select name="operator" id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" id="value2">
+		<input id="btn" type="button" value="Try me!">
+	</form>
+</body>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		document.getElementById('btn').addEventListener('click', calc, false);
+	});
+
+	setInterval(alerta, 30000);
+	function alerta()
+	{
+		alert('Please, use me...');
+	}
+
+	function calc() 
+	{
+		var operator = document.getElementById('operator');
+		var value1 = parseInt(document.getElementById('value1').value);
+		var value2 = parseInt(document.getElementById('value2').value);
+
+		if (Number.isInteger(value1) && value1 >= 0 && Number.isInteger(value2) && value2 >= 0)
+		{
+			if ((operator.value == '/' || operator.value == '%') && value2 == 0)
+				alert("It's over 9000!");
+			var result;
+			switch (operator.value) {
+				case '+':
+					console.log(value1 + value2);
+					alert(value1 + value2);
+					break;
+				case '-':
+					console.log(value1 - value2);
+					alert(value1 - value2);
+					break;
+				case '*':
+					console.log(value1 * value2);
+					alert(value1 * value2);
+					break;
+				case '/':
+					console.log(value1 / value2);
+					alert(value1 / value2);
+					break;
+				case '%':
+					console.log(value1 % value2);
+					alert(value1 % value2);
+					break;
+				default:
+					console.log('Invalid operator');
+			}
+		}
+		else
+			alert("Error :(")
+	}
+</script>
+</html>

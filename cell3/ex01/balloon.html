@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>ex01</title>
+	<style>
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		article
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		#balloon
+		{
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<div id="balloon"></div>
+	</article>
+</body>
+<script>
+	var i = 0;
+	var j = 0;
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.getElementById('balloon').addEventListener('click', increase, false);
+		document.getElementById('balloon').addEventListener('mouseout', decrease, false);
+	});
+
+	function increase()
+	{
+		var colors = ['green', 'blue', 'red'];
+		var balloon = document.getElementById('balloon');
+		if (balloon.offsetWidth <= 420)
+		{
+			if (i == 3)
+				i = 0;
+			if (i == -1)
+				i = 2;
+			balloon.style.backgroundColor = colors[i];
+			balloon.style.width = balloon.offsetWidth + 10 + "px";
+			balloon.style.height = balloon.offsetHeight + 10 + "px";
+			i++;
+		}
+		else
+		{
+			i = 0;
+			balloon.style.backgroundColor = "red";
+			balloon.style.width = "200px";
+			balloon.style.height = "200px";
+		}
+	}
+
+	function decrease()
+	{
+		var colors = ['green', 'blue', 'red'];
+		var balloon = document.getElementById('balloon');
+		if (balloon.offsetWidth >= 205)
+		{
+			if (i == 3)
+				i = 1;
+			if (i == -1)
+				i = 2;
+			balloon.style.backgroundColor = colors[i];
+			balloon.style.width = balloon.offsetWidth - 5 + "px";
+			balloon.style.height = balloon.offsetHeight - 5 + "px";
+			i--;
+		}
+	}
+
+</script>
+</html>

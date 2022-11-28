@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>ex00</title>
+</head>
+<body id="cuerpo">
+	<input type="button" onclick="setRandomColor()" value="click me!">
+</body>
+<script>
+	function getRandomColor()
+	{
+		var letters = '0123456789ABCDEF';
+		var color = '#';
+		for (var i = 0; i < 6; i++)
+		{
+			color = color + letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
+
+	function setRandomColor()
+	{
+		var cuerpo = document.getElementById("cuerpo");
+		cuerpo.style.backgroundColor = getRandomColor();
+	}
+</script>
+</html>

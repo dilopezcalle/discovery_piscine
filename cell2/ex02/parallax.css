@@ -1,0 +1,41 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-size: 150%;
+}
+
+.parallax1
+{
+	background-image: url("https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download-107088/glowing-triangle-neon.jpg");
+}
+
+.parallax2
+{
+	background-image: url("https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download/37867/Abstract-art-color-basic-background-pattern-ipad-pro-wallpaper-ilikewallpaper_com.jpg");
+}
+
+.parallax
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-position: center;
+
+	min-height: 100vh;
+	background-size: cover;
+
+	background-attachment: fixed;
+}
+
+.block
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-position: center;
+
+	height: 300px;
+	background-color: black;
+}
